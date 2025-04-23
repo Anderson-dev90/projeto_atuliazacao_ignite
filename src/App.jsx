@@ -1,0 +1,42 @@
+
+import { Header } from './components/Header';
+import { Post } from './post';
+
+import styles from './App.module.css';
+
+import './global.css';
+import { Sidebar } from './components/Sidebar';
+
+export function App() {
+
+
+  return (
+    <div>
+
+
+      <div>
+        <Header />
+        
+
+
+
+        <div className = {styles.wrapper}>
+        <Sidebar />
+        <main>
+        <Post />
+
+
+        </main>
+
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+  )
+}
+
+export default App
