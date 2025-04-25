@@ -1,16 +1,17 @@
 import { ThumbsDown, Trash } from '@phosphor-icons/react'
 import styles from './Comment.module.css'
+import { Avatar } from './Avatar'
     
     export function Comment(){
         return(
             <div className= {styles.comment}>
-            <img src="https://files.tecnoblog.net/wp-content/uploads/2021/02/the-last-of-us-part-2-ellie-1060x596.jpg"alt="" />
+            <Avatar  hasBorder={false} src="https://files.tecnoblog.net/wp-content/uploads/2021/02/the-last-of-us-part-2-ellie-1060x596.jpg" alt="" />
             
             <div className={styles.commentBox}>
                 <div className={styles.commentContent}>
                 <header>
                         <div className= {styles.authorAndTime}>
-                            <strong>Anderson Conceição Silva</strong>
+                            <strong>Ellie</strong>
                             <time title="23 de Maio às 12:20" dateTime="2023-05-11">Cerca de 1 hora </time>
                         </div>
 
@@ -19,7 +20,7 @@ import styles from './Comment.module.css'
                         </button>
                 </header>
 
-                <p>Muito Bom, Anderson !!</p>
+                <p>Esse Projeto me deu Saudades do Joel</p>
             </div>
 
             <footer>
