@@ -2,7 +2,7 @@ import { ThumbsDown, Trash } from '@phosphor-icons/react'
 import styles from './Comment.module.css'
 import { Avatar } from './Avatar'
     
-    export function Comment(){
+    export function Comment({content}){
         return(
             <div className= {styles.comment}>
             <Avatar  hasBorder={false} src="https://files.tecnoblog.net/wp-content/uploads/2021/02/the-last-of-us-part-2-ellie-1060x596.jpg" alt="" />
@@ -20,7 +20,7 @@ import { Avatar } from './Avatar'
                         </button>
                 </header>
 
-                <p>Esse Projeto me deu Saudades do Joel</p>
+                <p>{content}</p>
             </div>
 
             <footer>
