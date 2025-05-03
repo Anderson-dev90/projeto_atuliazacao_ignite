@@ -7,7 +7,7 @@ import { Comment } from './Comment';
 import styles from './Post.module.css';
 
 
-
+const isNewCommentInput = ewCommentText.length == 0;
 
 
 
@@ -60,9 +60,6 @@ export function Post({ author, publishedAt, content }) {
     }
 
 
-
-
-
     return (
         <article className={styles.post}>
             <header>
@@ -103,7 +100,9 @@ export function Post({ author, publishedAt, content }) {
                 />
 
                 <footer>
-                    <button type='submit'disabled={newCommentText.length == 0}>Publicar</button>
+                    <button type='submit' disabled={isNewCommentInput}>
+                        Publicar
+                    </button>
                 </footer>
 
             </form>
