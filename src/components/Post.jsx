@@ -25,8 +25,6 @@ export function Post({ author, publishedAt, content }) {
         locale: ptBR,
     })
 
-
-
     const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
         locale: ptBR,
         addSuffix: true
@@ -38,20 +36,20 @@ export function Post({ author, publishedAt, content }) {
 
 
         setComments([...comments, newCommentText]);
-<<<<<<< HEAD
         setNewCommentText('');
-=======
-        setNewCommentText('')
->>>>>>> feature-comunicacao-comentarios
 
 
 
     }
 
     function handleNewCommentChange() {
+        event.target.setCustomValidity('');
         setNewCommentText(event.target.value);
     }
 
+    function handleNewCommentInvalid() {
+        event.target.setCustomValidity('Esse campo é obrigatorio!');
+    }
 
     function deleteComment(commentToDelete) {
         const commentsWithoutDeletedOne = comments.filter(comment => {
@@ -100,18 +98,17 @@ export function Post({ author, publishedAt, content }) {
                     placeholder='Deixe seu comentário'
                     value={newCommentText}
                     onChange={handleNewCommentChange}
+                    onInvalid={handleNewCommentInvalid}
+                    required
                 />
 
                 <footer>
-                    <button type='submit'>Publicar</button>
+                    <button type='submit'disabled={newCommentText.length == 0}>Publicar</button>
                 </footer>
 
             </form>
             <div className={styles.commentList}>
                 {comments.map(comment => {
-<<<<<<< HEAD
-                    return <Comment key={comment} content={comment} />
-=======
                     return (
                         <Comment
                             key={comment}
@@ -119,7 +116,6 @@ export function Post({ author, publishedAt, content }) {
                             onDeleteComment={deleteComment}
                         />
                     )
->>>>>>> feature-comunicacao-comentarios
                 })}
 
             </div>
