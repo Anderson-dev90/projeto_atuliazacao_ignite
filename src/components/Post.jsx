@@ -7,7 +7,7 @@ import { Comment } from './Comment';
 import styles from './Post.module.css';
 
 
-
+const isNewCommentInput = ewCommentText.length == 0;
 
 
 
@@ -36,11 +36,7 @@ export function Post({ author, publishedAt, content }) {
 
 
         setComments([...comments, newCommentText]);
-<<<<<<< Updated upstream
         setNewCommentText('');
-=======
-        setNewCommentText('')
->>>>>>> Stashed changes
 
 
 
@@ -62,9 +58,6 @@ export function Post({ author, publishedAt, content }) {
 
         setComments(commentsWithoutDeletedOne);
     }
-
-
-
 
 
     return (
@@ -107,7 +100,9 @@ export function Post({ author, publishedAt, content }) {
                 />
 
                 <footer>
-                    <button type='submit'disabled={newCommentText.length == 0}>Publicar</button>
+                    <button type='submit' disabled={isNewCommentInput}>
+                        Publicar
+                    </button>
                 </footer>
 
             </form>
