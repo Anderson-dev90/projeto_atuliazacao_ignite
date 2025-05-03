@@ -36,7 +36,11 @@ export function Post({ author, publishedAt, content }) {
 
 
         setComments([...comments, newCommentText]);
+<<<<<<< Updated upstream
         setNewCommentText('');
+=======
+        setNewCommentText('')
+>>>>>>> Stashed changes
 
 
 
