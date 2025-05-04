@@ -7,7 +7,6 @@ import { Comment } from './Comment';
 import styles from './Post.module.css';
 
 
-const isNewCommentInput = ewCommentText.length == 0;
 
 
 
@@ -59,6 +58,8 @@ export function Post({ author, publishedAt, content }) {
         setComments(commentsWithoutDeletedOne);
     }
 
+
+const isNewCommentInput = newCommentText.length == 0;
 
     return (
         <article className={styles.post}>
